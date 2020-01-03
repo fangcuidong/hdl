@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>插入帖子</title>
+  </head>
+  <body>
+    标签：<input type="text" id="label" /><br />
+    内容：<input type="text" id="aaa" /><br />
+    点赞数：<input type="text" id="likes" /><br />
+    评论数：<input type="text" id="comments" /><br />
+    发贴用户的ID：<input type="text" id="uid" />
+    <button onclick="fn()">提交</button>
+    <script>
+      function fn() {
+        var str = `insert into posts values(null,
+        "${label.value}",
+        "${aaa.value}",
+        CURRENT_TIMESTAMP,
+        default,
+        ${likes.value},
+        ${comments.value},
+        "[\"/images/posts/4.jpg\",\"/images/posts/4_1.jpg\",\"/images/posts/4_2.jpg\",\"/images/posts/4_3.jpg\"]",
+        ${uid.value});`;
+        console.log(str);
+      }
+    </script>
+  </body>
+</html>
